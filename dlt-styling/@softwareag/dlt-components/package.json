@@ -1,0 +1,25 @@
+{
+  "name": "@softwareag/dlt-components",
+  "version": "2.5.1",
+  "description": "Delite design system components",
+  "main": "README.md",
+  "author": "Software AG",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "bootstrap": "=5.2.1",
+    "@popperjs/core": "=2.11.6",
+    "jquery": "=3.6.1"
+  },
+  "dependencies": {
+    "@chenfengyuan/datepicker": "=1.0.10",
+    "@softwareag/dlt-fonts": "=1.1.1",
+    "@softwareag/dlt-icons": "=1.3.1",
+    "@softwareag/dlt-tokens": "=2.1.1",
+    "malihu-custom-scrollbar-plugin": "=3.1.5",
+    "timepicker": "=1.14.0"
+  },
+  "engines": {
+    "node": "^14.18.1 || ^16.13",
+    "npm": "^6.14.15 || ^8.1"
+  }
+}

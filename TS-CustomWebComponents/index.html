@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Web Components</title>
+
+    <!-- Delite CSS Links -->
+    <link rel="stylesheet" type="text/css" href="../dlt-styling/@softwareag/dlt-components/css/delite.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../dlt-styling/@softwareag/dlt-fonts/roboto.css"/>
+    <link rel="stylesheet" type="text/css" href="../dlt-styling/@softwareag/dlt-icons/Font/css/dlt-icons-font.css"/>
+    <link rel="stylesheet" type="text/css" href="../dlt-styling/@softwareag/dlt-tokens/web/css/dlt-tokens.css"/><!-- Optional -->
+
+    <link rel="stylesheet" href="style.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <div class="dlt-container">
+
+        <dlt-text-input 
+            label="Prefered Username" 
+            placeholder="Enter First Name"
+            class="lg-input">
+        </dlt-text-input>
+
+        <br/>
+        
+        <dlt-text-input 
+            label="First Name"
+            placeholder="Enter First Name">
+        </dlt-text-input>
+        
+        <br/>
+        
+        <dlt-text-input 
+            label="Middle Name" 
+            placeholder="Enter Middle Name"
+            class="sm-input">
+        </dlt-text-input>
+        
+        <br/>
+        
+        <dlt-text-input 
+            label="Last Name" 
+            placeholder="Enter Last Name"
+            disabled>
+        </dlt-text-input>
+
+        <br/>
+        
+        <dlt-text-input 
+            label="Email"
+            class="error-input" 
+            placeholder="mary@softwareag.com"
+            error-message="Please check the email address entered">
+        </dlt-text-input>
+
+    </div>
+
+    <!-- Delite script tags -->
+    <script src="../dlt-styling/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+    <script src="../dlt-styling/@softwareag/dlt-components/js/delite.min.js"></script>
+
+    <script src="components.js"></script>
+</body>
+</html>

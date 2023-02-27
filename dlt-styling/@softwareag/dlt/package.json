@@ -1,0 +1,24 @@
+{
+  "name": "@softwareag/dlt",
+  "version": "22.2.0-alpha.3",
+  "description": "Delite 2 reference implementation",
+  "main": "README.md",
+  "scripts": {
+    "install-and-build-local": "npm install --prefix ./ --no-save ../dlt-fonts/ ../dlt-icons/dist/ ../dlt-tokens/dist ../dlt-components/dist",
+    "install-build-publish": "npm install --workspaces=false && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Delite",
+    "design",
+    "system"
+  ],
+  "author": "Software AG",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@softwareag/dlt-components": "=2.5.1",
+    "@softwareag/dlt-fonts": "=1.1.1",
+    "@softwareag/dlt-icons": "=1.3.1",
+    "@softwareag/dlt-tokens": "=2.1.1"
+  }
+}
