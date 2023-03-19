@@ -1,9 +1,7 @@
 const dltTextInputTemplate = document.createElement('template');
 dltTextInputTemplate.innerHTML = `
 <!-- Delite CSS Links -->
-<link rel="stylesheet" type="text/css" href="node_modules/@softwareag/dlt-tokens/web/css/dlt-tokens.css"/>
 <link rel="stylesheet" type="text/css" href="node_modules/@softwareag/dlt-components/css/delite.min.css"/>
-<link rel="stylesheet" type="text/css" href="node_modules/@softwareag/dlt-fonts/roboto.css"/>
 <link rel="stylesheet" type="text/css" href="node_modules/@softwareag/dlt-icons/Font/css/dlt-icons-font.css"/>
 <div class="dlt-form-item">
 <label class="dlt-form-label" for="text-input-2">Email</label>
