@@ -135,4 +135,8 @@ class dltTextarea extends HTMLElement {
     }
 }
 
+<<<<<<< HEAD
 window.customElements.define("dlt-textarea-input", dltTextarea);
+=======
+window.customElements.define("dlt-text-input", dltTextInput);
+>>>>>>> 90203fbd1775dcdb772496a3251a800f77e6da8f
