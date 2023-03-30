@@ -1,4 +1,4 @@
-# Web Components
+# Google Lit Web Components
 To run locally, run the following commands:
 
 ``` npm run i ```
