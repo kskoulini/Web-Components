@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@softwareag/dlt": "^22.1.4"
+  }
+}
