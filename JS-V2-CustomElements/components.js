@@ -1,9 +1,7 @@
 const dltTextInputTemplate = document.createElement('template');
 dltTextInputTemplate.innerHTML = `
 <!-- Delite CSS Links -->
-<link rel="stylesheet" type="text/css" href="node_modules/@softwareag/dlt-tokens/web/css/dlt-tokens.css"/>
 <link rel="stylesheet" type="text/css" href="node_modules/@softwareag/dlt-components/css/delite.min.css"/>
-<link rel="stylesheet" type="text/css" href="node_modules/@softwareag/dlt-fonts/roboto.css"/>
 <link rel="stylesheet" type="text/css" href="node_modules/@softwareag/dlt-icons/Font/css/dlt-icons-font.css"/>
 <div class="dlt-form-item">
 <label class="dlt-form-label" for="text-input-2">Email</label>
@@ -44,6 +42,20 @@ dltPasswordInputTemplate.innerHTML = `
 
 
 class dltTextInput extends HTMLElement {
+
+    constructor() {
+        super();
+        this.attachShadow({ mode:'open' }); // Attaching the shadow root
+        this.shadowRoot.appendChild(dltTextInputTemplate.content.cloneNode(true));
+    }
+
+}
+
+window.customElements.define("dlt-text-input", dltTextInput);
+
+
+class dltPasswordInput extends HTMLElement {
+
     constructor() {
         super();
         this.attachShadow({ mode:'open' }); // Attaching the shadow root
@@ -51,6 +63,7 @@ class dltTextInput extends HTMLElement {
         // Getting the "type" attribute defined on the dlt-text-input element
         // this--> referes to dlt-text-input
         let typeValue = this.hasAttribute('type') ? this.getAttribute('type') : '';
+        this.typeValue = typeValue;
 
         if(typeValue == 'textarea'){
             // if 'type=textarea' is set
@@ -67,6 +80,59 @@ class dltTextInput extends HTMLElement {
             this.shadowRoot.appendChild(dltTextInputTemplate.content.cloneNode(true));
         }
     }
+
+    connectedCallback(){
+
+        // Setting size of the element
+        if( this.typeValue !== 'textarea' && this.hasAttribute('size')){
+            let size = this.getAttribute('size');
+            if(size === 'lg' || size === 'sm'){
+                this.shadowRoot.querySelector('.dlt-form-item').classList.add(`${size}-input`);
+            }
+        }
+    }
 }
 
-window.customElements.define("dlt-text-input", dltTextInput);
+window.customElements.define("dlt-password-input", dltPasswordInput);
+
+
+class dltTextarea extends HTMLElement {
+
+    constructor() {
+        super();
+        this.attachShadow({ mode:'open' }); // Attaching the shadow root
+
+        // Getting the "type" attribute defined on the dlt-text-input element
+        // this--> referes to dlt-text-input
+        let typeValue = this.hasAttribute('type') ? this.getAttribute('type') : '';
+        this.typeValue = typeValue;
+
+        if(typeValue == 'textarea'){
+            // if 'type=textarea' is set
+            this.shadowRoot.appendChild(dltTextAreaTemplate.content.cloneNode(true));
+
+        }
+        else if(typeValue == 'password'){
+            // if 'type=password' is set
+            this.shadowRoot.appendChild(dltPasswordInputTemplate.content.cloneNode(true));
+        }
+        else{
+            // if 'type=text' is set OR an invalid type is set
+            // defaults to single-text input
+            this.shadowRoot.appendChild(dltTextInputTemplate.content.cloneNode(true));
+        }
+    }
+
+    connectedCallback(){
+
+        // Setting size of the element
+        if( this.typeValue !== 'textarea' && this.hasAttribute('size')){
+            let size = this.getAttribute('size');
+            if(size === 'lg' || size === 'sm'){
+                this.shadowRoot.querySelector('.dlt-form-item').classList.add(`${size}-input`);
+            }
+        }
+    }
+}
+
+window.customElements.define("dlt-textarea-input", dltTextarea);
