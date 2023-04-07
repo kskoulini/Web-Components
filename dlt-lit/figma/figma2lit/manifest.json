@@ -1,0 +1,10 @@
+{
+  "name": "figma2lit",
+  "id": "1106933401731456534",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": [
+    "figma"
+  ],
+  "ui": "ui.html"
+}

@@ -1,0 +1,46 @@
+/* =====================================================
+    COMPONENT SHARED STYLES
+   ------------------------------------------------------
+*/
+
+$el: 'tags';
+
+$tags-item-color-border:                              var(--dlt-#{$el}-color-border-input-default, $component-color-border-input-default);
+$tags-item-focus-border-color:                        var(--dlt-#{$el}-color-border-input-focus, $component-color-border-input-focus);
+$tags-item-clear-color:                               var(--dlt-#{$el}-color-interactive-primary-default, $component-color-primary-default);
+$tags-item-focus-outline-color:                       var(--dlt-#{$el}-color-border-input-focus, $component-color-border-input-focus);
+$tags-item-background-color:                          var(--dlt-#{$el}-color-background-interactive-secondary-default, $component-color-background-interactive-secondary-default);
+$tags-item-color:                                     var(--dlt-#{$el}-color-text-default, $component-color-text-default);
+
+/* =====================================================
+    TAGS SPECIFIC VARIABLES
+   ------------------------------------------------------
+  */
+
+$tags-item-padding:                                   3px;
+$tags-item-margin:                                    0 var(--dlt-spacing-half-x, 0.25rem) var(--dlt-spacing-half-x, 0.25rem) 0;
+$tags-item-span-margin:                               0 0 0 var(--dlt-spacing-quarter-x, 4px);
+$tags-item-line-height:                               1.2;
+$tags-item-border-width:                              var(--dlt-border-width, 1px);
+$tags-item-border-width-hover:                        var(--dlt-border-width-hover, 2px);
+$tags-item-border-style:                              var(--dlt-border-style-default, solid);
+$tags-item-border-style-hover:                        var(--dlt-border-style-hover, solid);
+$tags-item-border-radius:                             var(--dlt-border-radii-default, 0);
+$tags-item-transition:                                $buttons-time-transition $buttons-transition-effect;
+$tags-item-font-size:                                 var(--dlt-font-size-xxs, .875rem);
+$tags-item-small-font-size:                           var(--dlt-font-size-xs, .875rem);
+$tags-item-span-font-weight:                          var(--dlt-font-weight-regular, 400);
+$tags-item-span-line-height:                          1.2;
+$tags-item-clear-hover-border:                        var(--dlt-border-width-default, 1px) 
+                                                      var(--dlt-border-style-default, solid) 
+                                                      var(--dlt-#{$el}-color-interactive-primary-default, $component-color-primary-default);
+$tags-item-clear-size:                                var(--dlt-sizing-xs, 1rem);
+$tags-item-clear-margin:                              0 0 0 4px;
+$tags-item-clear-hover-box-shadow:                    inset 0px 0px 0px 1px var(--dlt-#{$el}-color-interactive-primary-default, $component-color-primary-default);
+$tags-item-allow-delete-font-weight:                  var(--dlt-font-weight-bold, 700);
+
+//## Unique adjustments
+$tags-item-outline-offset:                           -2px;
+
+$tags-color-primary-active:                          var(--dlt-tags-color-interactive-primary-active, $component-color-primary-active); 
+

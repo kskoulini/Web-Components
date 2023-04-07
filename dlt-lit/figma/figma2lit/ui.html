@@ -1,0 +1,45 @@
+<div id="dialog" class="dialog" style="font-family: Arial, Helvetica, sans-serif; font-size: 1rem;">
+  <h2>Figma 2 Lit Code Generator</h2>
+  <p>
+    <label for="nodes-select">Choose a node:</label>
+    <select name="nodes" id="nodes-select" style="width: 90%">
+      <option value="">--Please choose a node--</option>
+    </select>
+  </p>
+  
+  <button id="inspect">Generate</button>
+  <button id="cancel">Cancel</button>
+</div>
+<script>
+
+// document.getElementById('create').onclick = () => {
+//   const textbox = document.getElementById('count');
+//   const count = parseInt(textbox.value, 10);
+//   parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*')
+// }
+
+onmessage = (event) => {
+  // console.log("got this from the plugin code", event.data.pluginMessage)
+  const select = document.getElementById('nodes-select');
+  for (i in event.data.pluginMessage) {
+    const nodeOption = document.createElement('option');
+    nodeOption.text = event.data.pluginMessage[i];
+    // console.log("Adding option %O for text '%s'", nodeOption, nodeOption.text);
+    select.add(nodeOption);
+  }
+}
+
+window.addEventListener(KeyboardEvent, ev => console.log("keyboard: %O", ev));
+
+parent.postMessage({ pluginMessage: { type: 'request-nodelist' } }, '*');
+
+document.getElementById('inspect').onclick = () => {
+  parent.postMessage({ pluginMessage: { type: 'inspect-page', selection: document.getElementById('nodes-select').value } }, '*')
+}
+
+document.getElementById('cancel').onclick = () => {
+  parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
+}
+
+document.getElementById('nodes-select').focus();
+</script>

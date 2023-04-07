@@ -1,0 +1,48 @@
+{
+  "name": "lit-sass-ts-starter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "build:watch": "npm run build -- --watch",
+    "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
+    "lint:eslint": "eslint 'src/**/*.ts'",
+    "lint:lit-analyzer": "lit-analyzer",
+    "test": "npm run test:dev && npm run test:prod",
+    "test:dev": "wtr",
+    "test:watch": "wtr './src/**/*_test.ts' --watch",
+    "test:prod": "MODE=prod wtr",
+    "test:prod:watch": "MODE=prod wtr --watch",
+    "dev": "npm run build:watch & npm run serve",
+    "serve": "wds --watch --open"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@softwareag/dlt-fonts": "^1.1.0",
+    "@softwareag/dlt-icons": "^1.0.0",
+    "@softwareag/dlt-tokens": "^2.0.0",
+    "lit": "^2.2.4",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^3.0.0-next.1",
+    "@open-wc/testing-karma": "^4.0.9",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@web/dev-server": "^0.1.31",
+    "@web/test-runner": "^0.13.16",
+    "@web/test-runner-mocha": "^0.7.4",
+    "@web/test-runner-playwright": "^0.8.4",
+    "eslint": "^7.32.0",
+    "lit-analyzer": "^1.1.10",
+    "postcss": "^8.4.14",
+    "rollup": "^2.74.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-postcss-lit": "^1.1.1",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "sass": "^1.52.0",
+    "typescript": "^4.6.4"
+  }
+}

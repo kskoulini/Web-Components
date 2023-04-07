@@ -1,0 +1,264 @@
+@import "buttons_vars.scss";
+@import "../../../node_modules/@softwareag/dlt-icons/Font/css/dlt-icons-font";
+
+:host{
+    display: inline-block;
+    overflow: hidden;
+}
+
+.dlt-button {
+    // @include component-vars(buttons); //Mixin to define all the root variables
+    color: $buttons-color-text-primary;
+    text-decoration: none;
+    padding: $buttons-padding-y $buttons-padding-x;
+    font-family: $buttons-font-family;
+    font-size: $buttons-font-size;
+    font-weight: $buttons-font-weight;
+    line-height: $buttons-line-height;
+    // @include transition($buttons-time-transition $buttons-transition-effect);
+    cursor: pointer;
+    border-radius: $buttons-border-radii;
+    border: $buttons-border-width $buttons-border-style transparent;
+    outline: $buttons-border-width-hover $buttons-border-style-hover transparent;
+    outline-offset: $buttons-outline-offset;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+  }
+
+/* Primary Buttons with states -- Start --*/
+  .dlt-button-primary {
+    color: $buttons-color-text-inverse;
+    background-color: $buttons-color-primary;
+  
+    &:hover:not(:active):enabled,
+    &:focus {
+      color: $buttons-color-text-primary;
+      background-color: $buttons-color-primary-hover;
+      border: $buttons-border-width $buttons-border-style $buttons-color-primary;
+      outline: $buttons-border-width-hover $buttons-border-style-hover $buttons-color-primary;
+      outline-offset: $buttons-outline-offset;
+    }
+  
+    &:focus{
+      background-color: $buttons-color-primary-focus;
+    }
+  
+    &:disabled {
+      opacity: $buttons-opacity-disabled;
+      cursor: not-allowed;
+    }
+  
+    &:active {
+      background-color: $buttons-color-primary-active;
+      border-color: $buttons-color-primary-active;
+      outline: none;
+      color: $buttons-color-text-inverse;
+    }
+  }
+
+/* Primary Buttons with states -- End -- */
+
+/* Secondary Buttons with states -- Start --  */
+
+.dlt-button-secondary{
+    background-color: $buttons-color-secondary;
+    border-color: $buttons-color-primary;
+  
+    &:hover:not(:disabled),
+    &:focus {
+      background-color: $buttons-color-secondary;
+      border: $buttons-border-width $buttons-border-style $buttons-color-primary;
+      outline: $buttons-border-width-hover $buttons-border-style-hover $buttons-color-primary;
+      outline-offset: $buttons-outline-offset;
+    }
+  
+    &:disabled {
+      opacity: $buttons-opacity-disabled;
+      cursor: not-allowed;
+    }
+  
+    &:active {
+      color: $buttons-color-text-primary !important;
+      background-color: $buttons-color-secondary-active !important;
+      border-color: $buttons-color-primary !important;
+    }
+  }
+  
+  /* Secondary Buttons with states -- End --  */
+  
+  /* Secondary White Buttons with states -- Start --  */
+  
+  .dlt-button-secondary-inverse {
+    background-color: transparent;
+    border-color: $buttons-color-text-inverse;
+    color: $buttons-color-text-inverse;
+  
+    &:hover:not(:disabled),
+    &:focus {
+      border: $buttons-border-width $buttons-border-style $buttons-color-text-inverse;
+      outline: $buttons-border-width-hover $buttons-border-style-hover $buttons-color-text-inverse;
+      outline-offset: $buttons-outline-offset;
+      color: $buttons-color-text-inverse;
+      text-decoration: none;
+    }
+  
+    &:disabled {
+      opacity: $buttons-opacity-disabled;
+      cursor: not-allowed;
+    }
+  
+    &:active {
+      color: $buttons-color-text-inverse !important;
+      background-color: rgba(0, 0, 0, 0.2) !important;
+    }
+  }
+  
+  /* Secondary White Buttons with states -- End --  */
+  
+  /* Tertiary Buttons with states -- Start --  */
+  
+  .dlt-button-tertiary {
+    background-color: transparent;
+    border-color: transparent;
+    color: $buttons-color-text-primary;
+  
+    &:hover:not(:disabled),
+    &:focus {
+      border: $buttons-border-width $buttons-border-style $buttons-color-primary;
+      outline: $buttons-border-width-hover $buttons-border-style-hover $buttons-color-primary;
+      outline-offset: $buttons-outline-offset;
+      color: $buttons-color-text-primary;
+      text-decoration: none;
+    }
+  
+    &:disabled {
+      opacity: $buttons-opacity-disabled;
+      cursor: not-allowed;
+    }
+  
+    &:active {
+      color: $buttons-color-text-primary !important;
+      background-color: $buttons-color-secondary-active !important;
+      border-color: $buttons-color-primary !important;
+    }
+  }
+  
+  .dlt-button-tertiary-inverse {
+    background-color: transparent;
+    border-color: transparent;
+    color: $buttons-color-text-inverse;
+  
+    &:hover:not(:disabled),
+    &:focus {
+      border: $buttons-border-width $buttons-border-style $buttons-color-text-inverse;
+      outline: $buttons-border-width-hover $buttons-border-style-hover $buttons-color-text-inverse;
+      outline-offset: $buttons-outline-offset;
+      color: $buttons-color-text-inverse;
+      text-decoration: none;
+    }
+  
+    &:disabled {
+      opacity: $buttons-opacity-disabled;
+      cursor: not-allowed;
+    }
+  
+    &:active {
+      color: $buttons-color-text-inverse !important;
+      background-color: rgba(0, 0, 0, 0.2) !important;
+    }
+  }
+  
+  /* Secondary White Buttons with states -- End --  */
+  
+  /* Emphasis Buttons with states -- Start --  */
+  
+  .dlt-button-emphasis {
+    color: $buttons-color-text-inverse;
+    border: $buttons-border-width-hover $buttons-border-style $buttons-color-accent;
+    background: $buttons-color-accent;
+    border-radius: $buttons-border-accent-radii;
+    line-height: $buttons-accent-line-height;
+    outline: none;
+  
+    &:hover:not(:focus):enabled,
+    &:focus {
+      border: $buttons-border-width-hover $buttons-border-style-hover $buttons-color-accent;
+      color: $buttons-color-accent;
+      background: $buttons-color-accent-hover;
+      outline: none;
+    }
+  
+    &:focus{
+      background-color: $buttons-color-accent-focus;
+    }
+  
+    &:disabled {
+      opacity: $buttons-opacity-disabled;
+      cursor: not-allowed;
+      color: $buttons-color-text-inverse;
+    }
+  
+    &:active {
+      color: $buttons-color-text-inverse !important;
+      background-color: $buttons-color-accent-active !important;
+      border-color: $buttons-color-accent-active !important;
+      outline: none;
+    }
+  }
+
+  /* Icon Button --Start--*/
+.dlt-button-icon {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    height: $buttons-icon-height;
+    width: $buttons-icon-width;
+    cursor: pointer;
+  
+    &:not(.btn-selected):not(:active):hover:enabled,
+    &:focus {
+      border: $buttons-border-width $buttons-border-style $buttons-color-primary;
+      outline: $buttons-border-width $buttons-border-style $buttons-color-primary;
+    }
+  
+    &:disabled {
+      opacity: $buttons-opacity-disabled;
+      color: $buttons-color-text-primary;
+      cursor: not-allowed;
+    }
+  
+    &:active:enabled {
+      color: $buttons-color-text-primary;
+      background-color: $buttons-color-secondary-active;
+      border-color: $buttons-color-primary;
+      outline: $buttons-border-width $buttons-border-style $buttons-color-primary;
+    }
+  
+    .dlt-icon {
+      font-size: $buttons-icon-size-lg;
+    }
+  }
+  
+  /*Icon Button -- End --*/
+  
+  /* Emphasis Buttons with states -- End --*/
+  
+  /* Button sizing -- Start --*/
+  .dlt-button--lg {
+    line-height: $buttons-line-height-lg;
+    padding: $buttons-padding-y $buttons-padding-x-lg;
+  }
+  
+  .dlt-button--sm {
+    line-height: $buttons-line-height-sm;
+    font-size: $buttons-font-size-sm;
+    padding: $buttons-padding-y $buttons-padding-x-sm;
+  }
+
+  .dlt-icon--lg {
+    font-size: var(--dlt-font-size-xxl, 1.5rem);
+    float: left;
+    margin-right: 0.5rem;
+}
